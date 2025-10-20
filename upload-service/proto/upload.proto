@@ -1,0 +1,14 @@
+syntax = "proto3";
+package upload;
+option go_package = "./;proto";
+service UploadService {
+  rpc UploadFile(UploadRequest) returns (UploadResponse);
+}
+message UploadRequest {
+  string file_name = 1;
+  bytes file_content = 2;
+}
+message UploadResponse {
+  string url = 1;
+  string message = 2;
+}

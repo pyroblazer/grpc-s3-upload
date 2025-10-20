@@ -1,0 +1,1 @@
+FROM golang:1.22-alpine AS build;WORKDIR /app;COPY . .;RUN go mod init upload-service && go mod tidy && go build -o app;FROM alpine:3.19;WORKDIR /app;COPY --from=build /app/app .;COPY config ./config;CMD ["./app"]

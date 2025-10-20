@@ -1,0 +1,1 @@
+{"aws_region":"us-east-1","s3_bucket":"prod-upload-bucket","grpc_port":":50051"}
